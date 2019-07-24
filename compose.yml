@@ -35,6 +35,7 @@ services:
       - VIRTUAL_HOST=wekan.${DOMAIN}
       - MONGO_URL=mongodb://wekan-db/plan
       - ROOT_URL=https://wekan.${DOMAIN}${WEKAN_PATH_PREFIX}
+      #- MAIL_URL=smtp://[smtp username]:[smtp password]@[server name or IP]:[port: 25, 465, or 587]/
     image: wekanteam/wekan:meteor-1.8
     #<<: *logging-defaults
     networks:
