@@ -37,7 +37,10 @@ services:
       - ROOT_URL=https://wekan.${DOMAIN}${WEKAN_PATH_PREFIX}
       #- MAIL_URL=smtp://[smtp username]:[smtp password]@[server name or IP]:[port: 25, 465, or 587]/
     image: wekanteam/wekan:meteor-1.8
-    #<<: *logging-defaults
+    logging:
+      driver: "${LOGGING_DRIVER}"
+      options:
+        tag: "{{.Name}}"
     networks:
       - wekan
       - wekan-internal
