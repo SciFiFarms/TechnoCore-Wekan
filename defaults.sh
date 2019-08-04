@@ -2,4 +2,4 @@
 
 set_service_flag wekan 
 
-path_prefix WEKAN wekan
+#prefix=

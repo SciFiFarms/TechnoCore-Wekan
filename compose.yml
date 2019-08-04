@@ -18,9 +18,10 @@ services:
       - wekan-db
     deploy:
       labels:
-        - traefik.frontend.rule=Host:wekan.${DOMAIN}
-        - traefik.enable=true
+        - traefik.frontend.rule=$WEKAN_ROUTING_LABEL
+        - traefik.frontend.priority=$WEKAN_ROUTING_LABEL_PRIORITY
         - traefik.port=8080
+        - traefik.enable=true
         - traefik.tags=ingress 
         - traefik.docker.network=${STACK_NAME:-technocore}_wekan
         # Traefik service that listens to HTTP
